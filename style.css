@@ -38,14 +38,44 @@ canvas {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 120px;
-    background-image: url('assets/ground.png');
-    /* Safe area for mobile */
-    background-image: url('assets/ground.png');
-    background-size: auto 100%;
-    background-repeat: repeat-x;
+    height: 60px;
+    /* Gradient Theme */
+    background: linear-gradient(to top, rgba(45, 52, 54, 0.9), rgba(45, 52, 54, 0.6));
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+
+    /* Flex layout for text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
     z-index: 10;
     pointer-events: none;
+}
+
+.footer-text {
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    opacity: 0.9;
+    font-family: var(--font-main);
+}
+
+.footer-icon {
+    font-size: 1.2rem;
+    animation: bounce-x 1s infinite alternate;
+}
+
+@keyframes bounce-x {
+    from {
+        transform: translateX(-3px);
+    }
+
+    to {
+        transform: translateX(3px);
+    }
 }
 
 #ui-layer {
