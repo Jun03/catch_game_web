@@ -8,28 +8,20 @@
     --font-main: 'Outfit', sans-serif;
 }
 
-* {
-    box-sizing: border-box;
+html,
+body {
+    width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
-    user-select: none;
-    -webkit-user-select: none;
-    /* Safari */
-    touch-action: none;
-    /* Prevent browser zooming/scrolling */
-}
-
-body {
-    font-family: var(--font-main);
-    background-color: #222;
-    /* Fallback */
     overflow: hidden;
-    width: 100vw;
-    height: 100vh;
 }
 
 #game-container {
-    position: relative;
+    position: absolute;
+    /* Changed from relative to absolute to ensure full cover */
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -39,6 +31,22 @@ canvas {
     display: block;
     width: 100%;
     height: 100%;
+}
+
+#game-ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background-image: url('assets/ground.png');
+    background-color: #FF0000;
+    /* Bright RED for debug */
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+    z-index: 9999;
+    /* Force top */
+    pointer-events: none;
 }
 
 #ui-layer {

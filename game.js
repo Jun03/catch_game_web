@@ -77,7 +77,8 @@ const ui = {
 function resize() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    player.y = canvas.height - 120;
+    // Position player above the 120px ground
+    player.y = canvas.height - 120 - player.height + 20; // +20 for small overlap/depth effect
 
     if (!state.isRunning) {
         player.x = canvas.width / 2 - player.width / 2;
